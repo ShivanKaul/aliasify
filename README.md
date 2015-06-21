@@ -1,6 +1,6 @@
 # Aliasify
 
-Isn't it annoying when you have to spell out the full path to projects that you often work on? I like setting up aliases to project directories. It's kinda annoying though to run `pwd` and then redirecting that to `.bash_aliases` or whatever and then manually adding an alias. So I wrote [aliasify](https://rubygems.org/gems/aliasify).
+I like setting up aliases to project directories I use a lot. It's kinda annoying though to run `pwd` and then redirecting that to `.bash_aliases` or whatever and then manually adding an alias. So I wrote [aliasify](https://rubygems.org/gems/aliasify).
 
 ## Installation
 
@@ -24,7 +24,7 @@ Once the gem is installed (and you've run `rbenv rehash`...), go to your oft-use
 
     $ aliasify <insert-alias-name-you'd-like-here>   
 
-For example, I used to work on [PrettyPrintGmail](https://github.com/ShivanKaul/PrettyPrintGmail) a lot at one point. So I would set up something like: `aliasify pp`. Then on start-up I could type in `pp` and be taken directly to the directory.
+Now, just `source .bash_aliases` (or whatever file you use to store aliases, the gem will tell you which one you need to source). For example, I used to work on [PrettyPrintGmail](https://github.com/ShivanKaul/PrettyPrintGmail) a lot at one point. So I would set up something like: `aliasify pp`. Then on start-up I could type in `pp` and be taken directly to the directory.
 
 ## Contributing
 
