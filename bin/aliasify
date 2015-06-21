@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require_relative "../lib/aliasify"
+
+raise ArgumentError, "Only one alias name can be supplied!" if ARGV.length > 1
+raise ArgumentError, "You need to supply an alias name to create an alias!" if ARGV.length == 0
+shortcut = ARGV.shift
+puts Aliasify.add_alias(shortcut)
