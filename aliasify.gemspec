@@ -10,7 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ["shivankaulsahib@gmail.com"]
 
   spec.summary       = %q{Add an alias to your current directory.}
-  spec.homepage      = ""
+  spec.description   = %q{Tired of changing directories often to commonly used projects? Just type `aliasify <alias-name>` and the gem will create an alias to the current working directory.}
+  spec.homepage      = "http://shivankaulsahib.me"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -22,8 +23,7 @@ Gem::Specification.new do |spec|
   end
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables   = [ "aliasify" ]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.9"

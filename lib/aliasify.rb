@@ -1,37 +1,41 @@
 require "aliasify/version"
 
 module Aliasify
-	def self.addAlias(shortcut)
-		cwd = Dir.pwd
-		toAdd = "alias #{shortcut}=\"cd #{cwd}\""
-		puts "#{toAdd}"
-		if File.exist?("#{Dir.home}/.bash_aliases") 
-			File.open("#{Dir.home}/.bash_aliases", 'a') do |file|
-				file.puts toAdd
-				print "Success! Go to the current directory by simply typing #{shortcut}. Try it out!"
-			end
-		elsif File.exist?("#{Dir.home}/.bash_profile") 
-			File.open("#{Dir.home}/.bash_profile", 'a') do |file|
-				file.puts toAdd
-				print "Success! Go to the current directory by simply typing #{shortcut}. Try it out!"
-			end
-		elsif File.exist?("#{Dir.home}/.bashrc") 
-			File.open("#{Dir.home}/.bashrc", 'a') do |file|
-				file.puts toAdd
-				print "Success! Go to the current directory by simply typing #{shortcut}. Try it out!"
-			end
-		elsif File.exist?("#{Dir.home}/.bash_login") 
-			File.open("#{Dir.home}/.bash_login", 'a') do |file|
-				file.puts toAdd
-				print "Success! Go to the current directory by simply typing #{shortcut}. Try it out!"
+	@@toAdd
+	@@shortcut
 
-			end
-		elsif File.exist?("#{Dir.home}/.bash_profile") 
-			File.open("#{Dir.home}/.bash_profile", 'a') do |file|
-				file.puts toAdd
-				print "Success! Go to the current directory by simply typing #{shortcut}. Try it out!"
-			end
-		else print "Tried to look for .bash_aliases, .bash_profile, .bashrc, .bash_profile and .environment. None of them were found, so won't be able to add alias :("
+	def self.add_alias(shortcut)
+		cwd = Dir.pwd
+		@@toAdd = "alias #{shortcut}=\"cd #{cwd}\""
+		@@shortcut = shortcut
+		print "Trying to add `#{@@toAdd}`..."
+		if file_exists(".bash_aliases")
+			add_to_file(".bash_aliases")
+		elsif file_exists(".bash_profile")
+			add_to_file(".bash_profile")
+		elsif file_exists(".bashrc")
+			add_to_file(".bashrc")
+		elsif file_exists(".bash_login")
+			add_to_file(".bash_login")
+		elsif file_exists(".environment")
+			add_to_file(".environment")
+		else print "Tried to look for .bash_aliases, .bash_profile, .bashrc, .bash_login and .environment.
+			None of them were found, so won't be able to add alias :("
 		end
 	end
+
+	# Helper Functions
+
+	def self.add_to_file(filename)
+		File.open(filename, 'a') do |file|
+			file.puts @@toAdd
+			puts " Found #{filename}."
+			print "Success! Go to the current directory from wherever by simply typing `#{@@shortcut}`."
+		end
+	end
+
+	def self.file_exists(filename)
+		File.exist?("#{Dir.home}/#{filename}")
+	end
+
 end
