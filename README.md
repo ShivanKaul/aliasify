@@ -1,6 +1,6 @@
 # Aliasify
 
-Isn't it annoying when you have to spell out the full path to projects that you often work on? I like setting up aliases to project directories. It's kinda annoying though to run `pwd` and then redirecting that to `.bash_aliases` or whatever and then manually adding an alias. So I wrote aliasify.
+Isn't it annoying when you have to spell out the full path to projects that you often work on? I like setting up aliases to project directories. It's kinda annoying though to run `pwd` and then redirecting that to `.bash_aliases` or whatever and then manually adding an alias. So I wrote [aliasify](https://rubygems.org/gems/aliasify).
 
 ## Installation
 
