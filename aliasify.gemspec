@@ -11,7 +11,8 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Add an alias to your current directory.}
   spec.description   = <<-EOF
-  Tired of changing directories often to commonly used projects? Just type `aliasify <alias-name>` and the gem will create an alias to the current working directory. Example: `aliasify abc`. Now, simply type in `abc` wherever you are and navigate to the present directory.
+  Tired of changing directories often to commonly used projects? Just type `aliasify <alias-name>` and the gem will create an alias to the current working directory. 
+  Example: `aliasify abc`. Now, simply type in `abc` wherever you are and navigate to the present directory.
   EOF
   spec.homepage      = 'http://rubygems.org/gems/aliasify'
   spec.license       = "MIT"

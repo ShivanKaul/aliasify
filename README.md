@@ -1,8 +1,6 @@
 # Aliasify
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/aliasify`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Isn't it annoying when you have to spell out the full path to projects that you often work on? I like setting up aliases to project directories. It's kinda annoying though to run `pwd` and then redirecting that to `.bash_aliases` or whatever and then manually adding an alias. So I wrote aliasify.
 
 ## Installation
 
@@ -22,13 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Once the gem is installed (and you've run `rbenv rehash`...), go to your oft-used project directory. Now, run 
 
-## Development
+    $ aliasify <insert-alias-name-you'd-like-here>   
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+For example, I used to work on [PrettyPrintGmail](https://github.com/ShivanKaul/PrettyPrintGmail) a lot at one point. So I would set up something like: `aliasify pp`. Then on start-up I could type in `pp` and be taken directly to the directory.
 
 ## Contributing
 
