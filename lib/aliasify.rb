@@ -8,7 +8,7 @@ module Aliasify
 		cwd = Dir.pwd
 		@@toAdd = "alias #{shortcut}=\"cd #{cwd}\""
 		@@shortcut = shortcut
-		print "Trying to add `#{@@toAdd}`..."
+		print "Trying to add `#{@@toAdd}`."
 		if file_exists(".bash_aliases")
 			add_to_file(".bash_aliases")
 		elsif file_exists(".bash_profile")
