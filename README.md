@@ -2,6 +2,8 @@
 
 I like setting up aliases to project directories I use a lot. It's kinda annoying though to run `pwd` and then redirecting that to `.bash_aliases` or whatever and then manually adding an alias. So I wrote [aliasify](https://rubygems.org/gems/aliasify).
 
+**[Blogpost](http://shivankaulsahib.me/blog/2015/06/28/aliasify-gem.html).**
+
 ## Installation
 
 Add this line to your application's Gemfile:
